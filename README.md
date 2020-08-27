@@ -129,7 +129,7 @@ Write into this stream
 http PUT https://wle4ucytwl.execute-api.us-east-1.amazonaws.com/test/streams/event-pipel/record Data="testing" PartitionKey=1
 If it works you’ll see something like this with ShardID & SequenceNumber
 
-![If it works you’ll see something like this with ShardID & SequenceNumber](/pipeline-pics/Screen Shot 2012-12-21 at 5.50.23 PM.png)
+!(event-pipeline/pipeline-pics/Screen Shot 2012-12-21 at 5.50.23 PM.png)
 
 After 60 seconds (after batch collection) the data should be in s3.  GZIP file
 
