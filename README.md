@@ -1,5 +1,5 @@
 # event-pipeline
-
+![Image of Event Pipeline](https://miro.medium.com/max/700/1*eCRP1WjEY5tahxJK_e6VMg.png)
 
 1) Create Kinesis
   > - Name= ‘event-pipe’
