@@ -12,51 +12,51 @@
   > - Create role -> api gateway -> name “api-gateway-pipeline”
   > - Attach another policy “Kinesis full access” (save ARN)
 4) Add Resources and Methods in API Gateway
-  > - Create URL path for REST API
-      > - Name “Streams”
-      > - Create resources
-      > - Method
-          > - Get Method
-          > - Integration Type: AWS Service
-          > - Region: us-east-1
-          > - Service:  Kinesis
-          > - HTTP method:  POST
-          > - Action:  ListStreams
-          > - Execution role:  ARN of the role we created.
-          > - Save
-      > - Checkout out Integration Request (tells Kinesis what kind of data we are dealing with) = in our case we want JSON data
-          > - HTTP Headers
-          > - Name “Content-Type” 
-          > - Mapped from: ‘application/x-amz-json-1.1’  
-          > - Mapping Templates - select (recommended)
-          > - Content-type: application/json
-          > - { }
-          > - Save
-      > - Go back to method execution and Test
-          > - Test Get method - should list all available Kinesis streams
+    > - Create URL path for REST API
+      >> - Name “Streams”
+      >> - Create resources
+      >> - Method
+          >>> - Get Method
+          >>> - Integration Type: AWS Service
+          >>> - Region: us-east-1
+          >>> - Service:  Kinesis
+          >>> - HTTP method:  POST
+          >>> - Action:  ListStreams
+          >>> - Execution role:  ARN of the role we created.
+          >> - Save
+      >> - Checkout out Integration Request (tells Kinesis what kind of data we are dealing with) = in our case we want JSON data
+          >>> - HTTP Headers
+          >>> - Name “Content-Type” 
+          >>> - Mapped from: ‘application/x-amz-json-1.1’  
+          >>> - Mapping Templates - select (recommended)
+          >>> - Content-type: application/json
+          >>> - { }
+          >>> - Save
+      >> - Go back to method execution and Test
+          >>> - Test Get method - should list all available Kinesis streams
 5) Create 2nd resource
     > - Resource Name = KinesisStream
     > - Resource Path = {stream-name}
     > - Create
     > - Method
-        > - Get Method
-        > - Integration Type: AWS Service
-        > - Region: us-east-1
-        > - Service:  Kinesis
-        > - HTTP method:  POST
-        > - Action:  DescribeStream
-        > - Execution role:  ARN of the role we created.
-        > - Save
+        >> - Get Method
+        >> - Integration Type: AWS Service
+        >> - Region: us-east-1
+        >> - Service:  Kinesis
+        >> - HTTP method:  POST
+        >> - Action:  DescribeStream
+        >> - Execution role:  ARN of the role we created.
+        >> - Save
       > - Checkout out Integration Request
-        > - HTTP Headers
-        > - Name “Content-Type” 
-        > - Mapped from: ‘application/x-amz-json-1.1’  
-        > - Mapping Templates - select (recommended)
-        > - Content-type: application/json
-        > - {  "StreamName": "$input.params('stream-name')" }
-        > - Save
+        >> - HTTP Headers
+        >> - Name “Content-Type” 
+        >> - Mapped from: ‘application/x-amz-json-1.1’  
+        >> - Mapping Templates - select (recommended)
+        >> - Content-type: application/json
+        >> - {  "StreamName": "$input.params('stream-name')" }
+        >> - Save
       > - Go back to method execution and Test
-        > - Test Get method - this time add the name of the STREAM
+        >> - Test Get method - this time add the name of the STREAM
 6) Create another resource (This path will give Kinesis which eventually will be transferred to s3 bucket)
     > - Resource name “record”
     > - Enable API Gateway CORS
