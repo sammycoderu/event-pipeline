@@ -129,8 +129,8 @@ https://wle4ucytwl.execute-api.us-east-1.amazonaws.com/test/streams/event-pipel
 Detail about the stream
 
 Write into this stream
-http PUT https://wle4ucytwl.execute-api.us-east-1.amazonaws.com/test/streams/event-pipel/record Data="testing" PartitionKey=1
-If it works you’ll see something like this with ShardID & SequenceNumber
+'http PUT https://wle4ucytwl.execute-api.us-east-1.amazonaws.com/test/streams/event-pipel/record Data="testing" PartitionKey=1
+If it works you’ll see something like this with ShardID & SequenceNumber'
 
 ![result](https://github.com/sammycoderu/event-pipeline/blob/master/pipeline-pics/result.png)
 
