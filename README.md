@@ -81,11 +81,14 @@
             "PartitionKey": "$input.path('$.PartitionKey')"
             }
         > - Save
-            > - Mapping template will have the actual Data that we want to pass through to an s3 bucket
-            > - 2nd will be a Stream Name - which we’ll get from our URL path
-            > - **PartitionKey - PartitionKey is an integer that’s hashed in order to arrive at a shard number 
-            > - Example: if we have multiple shards
-
+          <ol>
+            <li>Mapping template will have the actual Data that we want to pass through to an s3 bucket</li>
+            <li>2nd will be a Stream Name - which we’ll get from our URL path</li>
+            <li>PartitionKey - PartitionKey is an integer that’s hashed in order to arrive at a shard number
+                <li>Example: if we have multiple shards`</li>
+             </li>
+          <ol>
+            
       > - Go back to method execution and Test
           > - Add { “Data”: “testing”, “PartitionKey”: 1}
 7) Since Kinesis Streams can’t write directly to s3, we need to create delivery stream in Kinesis Firehose  
