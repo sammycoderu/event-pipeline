@@ -16,24 +16,28 @@
       >> - Name “Streams”
       >> - Create resources
       >> - Method
-          >>> - Get Method
-          >>> - Integration Type: AWS Service
-          >>> - Region: us-east-1
-          >>> - Service:  Kinesis
-          >>> - HTTP method:  POST
-          >>> - Action:  ListStreams
-          >>> - Execution role:  ARN of the role we created.
-          >> - Save
+        <ol>
+            <li>Get Method</li>
+            <li>Integration Type: AWS Service</li>
+            <li>Region: us-east-1</li>
+            <li>Service:  Kinesis</li>
+            <li>HTTP method:  POST</li>
+            <li>Action:  ListStreams</li>
+            <li>Execution role:  ARN of the role we created.</li>
+            <li>Save</li>
+        </ol>
       >> - Checkout out Integration Request (tells Kinesis what kind of data we are dealing with) = in our case we want JSON data
-          >>> - HTTP Headers
-          >>> - Name “Content-Type” 
-          >>> - Mapped from: ‘application/x-amz-json-1.1’  
-          >>> - Mapping Templates - select (recommended)
-          >>> - Content-type: application/json
-          >>> - { }
-          >>> - Save
+        <ol>
+          <li>HTTP Headers</li>
+          <li>Name “Content-Type”</li>
+          <li>Mapped from: ‘application/x-amz-json-1.1’</li>
+          <li>Mapping Templates - select (recommended)</li>
+          <li>Content-type: application/json</li>
+          <li>{ }</li>
+          <li>Save</li>
+        </ol>
       >> - Go back to method execution and Test
-          >>> - Test Get method - should list all available Kinesis streams
+           <ol>Test Get method - should list all available Kinesis streams </ol>
 5) Create 2nd resource
     > - Resource Name = KinesisStream
     > - Resource Path = {stream-name}
